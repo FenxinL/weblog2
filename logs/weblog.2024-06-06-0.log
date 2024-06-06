@@ -30,3 +30,12 @@
 [TraceId: ] 2024-06-06 14:43:34.893 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 666 ms
 [TraceId: ] 2024-06-06 14:43:35.163 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
 [TraceId: ] 2024-06-06 14:43:35.168 [main] INFO  com.quanxiaoha.weblog.web.WeblogWebApplication - Started WeblogWebApplication in 1.316 seconds (JVM running for 2.272)
+[TraceId: ] 2024-06-06 14:55:45.355 [main] INFO  com.quanxiaoha.weblog.web.WeblogWebApplication - Starting WeblogWebApplication using Java 1.8.0_311 on Laptop_fenxin with PID 20744 (E:\projects\weblog-springboot\weblog-web\target\classes started by 13284 in E:\projects\weblog-springboot)
+[TraceId: ] 2024-06-06 14:55:45.356 [main] INFO  com.quanxiaoha.weblog.web.WeblogWebApplication - The following profiles are active: prod
+[TraceId: ] 2024-06-06 14:55:45.867 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[TraceId: ] 2024-06-06 14:55:45.872 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+[TraceId: ] 2024-06-06 14:55:45.872 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+[TraceId: ] 2024-06-06 14:55:45.911 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[TraceId: ] 2024-06-06 14:55:45.911 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 532 ms
+[TraceId: ] 2024-06-06 14:55:46.121 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[TraceId: ] 2024-06-06 14:55:46.126 [main] INFO  com.quanxiaoha.weblog.web.WeblogWebApplication - Started WeblogWebApplication in 1.062 seconds (JVM running for 1.61)
