@@ -1,4 +1,3 @@
-
 package com.quanxiaoha.weblog.common.aspect;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -6,10 +5,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.UUID;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -30,12 +31,20 @@ public class ApiOperationLogAspect {
      */
     @Around("apiOperationLog()")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
+        try {
+            MDC.put("traceId", UUID.randomUUID().toString());
+
+
         // 请求开始时间
         long startTime = System.currentTimeMillis();
 
         // 获取被请求的类和方法
         String className = joinPoint.getTarget().getClass().getSimpleName();
         String methodName = joinPoint.getSignature().getName();
+
+
+        // traceId 表示跟踪 ID， 值这里直接用的 UUID
+     //   MDC.put("traceId", UUID.randomUUID().toString());
 
         // 请求入参
         Object[] args = joinPoint.getArgs();
@@ -61,7 +70,13 @@ public class ApiOperationLogAspect {
         log.info("====== 请求结束: [{}], 耗时: {}ms, 出参: {} =================================== ",
                 description, executionTime, resultJsonStr);
 
+
+     //   MDC.clear();
+
         return result;
+        } finally {
+            MDC.clear();
+        }
     }
 
     /**
